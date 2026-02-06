@@ -9,6 +9,7 @@ int main(int argc, char* argv[]) {
   try {
     // Add working directory to possible locations for the "platforms" directory.
     QCoreApplication::addLibraryPath(".");
+
     MainWidget w;
 
     w.show();
