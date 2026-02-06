@@ -1,6 +1,6 @@
-#include "main_widget.h"
+﻿#include "main_widget.h"
 #include <QtWidgets>
-
+#include "licenseform.h"
 
 int main(int argc, char* argv[]) {
   int ret = 0;
@@ -10,7 +10,7 @@ int main(int argc, char* argv[]) {
     // Add working directory to possible locations for the "platforms" directory.
     QCoreApplication::addLibraryPath(".");
 
-    MainWidget w;
+    licenseform w;
 
     w.show();
 

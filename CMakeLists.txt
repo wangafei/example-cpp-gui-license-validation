@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 project(example-cpp-gui-license-validation)
 
+
 find_package(Qt5 REQUIRED
   COMPONENTS Widgets Network
   PATHS (
@@ -11,7 +12,10 @@ find_package(Qt5 REQUIRED
 )
 
 # Tell CMake to run moc (a Qt tool) when necessary.
+# 处理qt的资源，比如.ui生成临时试用的Ui_widget.h 等
+set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
 
 # As moc files are generated in the binary dir, tell CMake
 # to always look for includes there.
@@ -26,6 +30,11 @@ add_executable(example-cpp-gui-license-validation
   src/main.cpp
   src/main_widget.cpp
   src/main_widget.h
+  src/licenseform.h
+  src/licenseform.cpp
+  src/licenseform.ui
+  src/ValidateLicense.h
+  src/ValidateLicense.cpp
 )
 
 target_compile_features(example-cpp-gui-license-validation PUBLIC cxx_std_11)
